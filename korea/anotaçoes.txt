@@ -1,0 +1,35 @@
+"shellfish": {'flnhl', 'zrvtg', 'mkpmkx', 'tmp'}
+'sesame': {'vxzpfp', 'ttkn', 'cdslv'}
+'fish': {'vzn'}
+'nuts': {'zrvtg', 'pdpgm', 'cdslv', 'tmp'}
+'dairy': {'pdpgm', 'ttkn', 'cdslv', 'tmp'}
+'soy': {'pdpgm', 'vxzpfp', 'lgtvqf', 'pbln', 'ttkn', 'jvjhx', 'tmp'}
+'wheat': {'pdpgm', 'cdslv', 'flnhl', 'ttkn', 'lfmng'}
+'peanuts': {'zrvtg', 'mkpmkx', 'cdslv', 'ttkn', 'tmp'}
+
+ingredientes_ruins = ['mkpmkx', 'flnhl', 'zrvtg', 'tmp', 'vxzpfp', 'ttkn', 'cdslv', 'vzn', 'pdpgm', 'lgtvqf'
+, 'pbln', 'jvjhx', 'dnbhhv', 'lfmng']
+
+'mkpmkx': shellfish, peanuts, None
+'flnhl':  shellfish, wheat, None
+'zrvtg':  shellfish, nuts, peanuts, None
+'tmp' :   shellfish, nuts, dairy, soy, peanuts, None
+'vxzpfp': sesame, soy, None
+'ttkn':   sesame, dairy, soy, wheat, peanuts, None
+'cdslv':  sesame, nuts, dairy, wheat, peanuts, None
+'pdpgm':  nuts, dairy, soy, wheat, None
+
+dairy, fish,  nuts, peanuts, sesame, shellfish, soy, wheat
+
+
+for tuple in ingredientes_ruins:
+    counter = 0
+    for a in korea2:
+        for ing in a:
+            if ing not in tuple and ing != "vzn":
+                counter+=1
+    respostas.add(counter)
+
+print(respostas)
+
+pdpgm,zrvtg,tmp,ttkn,cdslv,pdpgm,mkpmkx,vxzpfp,flnhl

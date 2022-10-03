@@ -1,3 +1,6 @@
+import itertools
+
+
 with open("korea.txt") as f:
     entrada = [x.strip().split("(") for x in f]
 
@@ -20,7 +23,7 @@ for l in todas_alergias:
         if l in alergia[k]:
             possibilidades.append((l, set(receita.split())))
 
-dic_blabla = {}
+alergia_ingre = {}
 for allergy in todas_alergias:
     blabla = set()
     for h in range(len(possibilidades)):
@@ -29,27 +32,22 @@ for allergy in todas_alergias:
                 blabla = possibilidades[h][1]
             else:
                 blabla = blabla.intersection(possibilidades[h][1])
-            dic_blabla[allergy] = blabla
+    alergia_ingre[allergy] = blabla
 
-dic_final = {}
+P = ['mkpmkx', 'flnhl', 'zrvtg', 'tmp', 'vxzpfp', 'ttkn', 'cdslv', 'vzn', 'pdpgm', 'lgtvqf', 'pbln', 'jvjhx', 'dnbhhv', 'lfmng']
+ingredientes_ruins = list(itertools.combinations(P , 8))
+korea2 = [a.split() for a in korea]
 
-for f in dic_blabla:
-    set_tmp = dic_blabla[f]
-    for b in dic_blabla:
-        if b == f:
-            continue
-        set_tmp = set_tmp - dic_blabla[b]
-    dic_final[f] = set_tmp
-print(dic_final)
-    
+final = []
 
-        
-
-    
-
+for tuple in ingredientes_ruins:
+    counter = 0
+    for a in korea2:
+        for ing in a:
+            if ing not in tuple:
+                counter+=1
+    if counter == 2410:
+        final.append(tuple)
 
 
-
-
-
-
+print(final)
