@@ -26,8 +26,8 @@ operações = {
     '8*' : operator.mul
 }
 
-prioridade = [["8+", "8*"], ["7+", "7*"],["6+", "6*"],["5+", "5*"],["4+", "4*"],
-["3+", "3*"],["2+", "2*"],["1+", "1*"],["0+", "0*"]]
+prioridade = ["8*", "8+", "7*", "7+","6*", "6+","5*", "5+","4*", "4+",
+"3*", "3+","2*", "2+","1*", "1+","0*", "0+"]
 
 def calculo(expressão):
     if len(expressão) == 3:
@@ -36,7 +36,7 @@ def calculo(expressão):
     else:
         for op_list in prioridade:
             for op in expressão:
-                if op in op_list:
+                if op == op_list:
                     idx = expressão.index(op)-1
                     result = calculo([expressão.pop(idx) for i in range(3)])
                     expressão.insert(idx, result)
