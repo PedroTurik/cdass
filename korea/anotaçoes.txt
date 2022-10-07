@@ -33,3 +33,5 @@ for tuple in ingredientes_ruins:
 print(respostas)
 
 pdpgm,zrvtg,tmp,ttkn,cdslv,pdpgm,mkpmkx,vxzpfp,flnhl
+
+.
