@@ -1,7 +1,7 @@
 with open("HD.txt") as f:
     comprimentos = f.readline()
 comprimentos = [ord(x) for x in comprimentos] + [17,31,73,47,23]
-print(comprimentos)
+
 hd = [i for i in range(256)]
 salto = 0
 cur_index = 0
@@ -36,5 +36,3 @@ for n in lista_final:
     hasheado += f"{n:02x}"
     
 print(hasheado)
-
-        

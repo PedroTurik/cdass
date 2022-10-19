@@ -24,3 +24,4 @@ for comprimento in comprimentos:
         salto += 1
         if cur_index > 256: cur_index = cur_index%256
 print(hd[0]*hd[1])
+print(hd)
